@@ -48,9 +48,9 @@ public enum AttributeKeyMap {
      */
     LOCATION("LOCATION"),
     /**
-     * Parent visit.
+     * Parent visit. (deprecated)
      */
-    PARENT_VISIT("VISIT_PAREN"),
+    PARENT_VISIT("VISIT_PAREN", true),
     /**
      * The NHS number associated with an encounter (and hopefully
      * an entire MRN).
@@ -175,6 +175,7 @@ public enum AttributeKeyMap {
     PATHOLOGY_STATUS_CHANGE_TIME("PATH_STS_TIME");
 
     private String shortname;
+    private boolean deprecated;
 
     /**
      * Create an Enum value with a specified short name used in the attributes
@@ -184,6 +185,19 @@ public enum AttributeKeyMap {
      */
     AttributeKeyMap(String shortname) {
         this.shortname = shortname;
+        this.deprecated = false;
+    }
+
+    /**
+     * Create an Enum value with a specified short name used in the attributes
+     * table.
+     *
+     * @param shortname the short name used in the database
+     * @param deprecated is this attribute deprecated
+     */
+    AttributeKeyMap(String shortname, boolean deprecated) {
+        this.shortname = shortname;
+        this.deprecated = deprecated;
     }
 
     /**
@@ -211,5 +225,12 @@ public enum AttributeKeyMap {
             }
         }
         return values.get(text.toUpperCase());
+    }
+
+    /**
+     * @return is this attribute deprecated
+     */
+    public boolean isDeprecated() {
+        return deprecated;
     }
 }
