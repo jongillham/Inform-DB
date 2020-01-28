@@ -44,6 +44,21 @@ public enum AttributeKeyMap {
      */
     DISCHARGE_TIME("DISCH_TIME"),
     /**
+     * Categorical showing patient discharge status.
+     */
+    DISCHARGE_STATUS("DISCH_STS"),
+    DISCHARGE_STATUS_ALIVE("DISCH_STS_ALIVE"),
+    DISCHARGE_STATUS_DEAD("DISCH_STS_DEAD"),
+    DISCHARGE_LOCATION("DISCH_LOCATION"),
+    /**
+     * Patient death fact type.
+     */
+    PATIENT_DEATH("DEATH_FACT"),
+    /**
+     * Time of death as a date time.
+     */
+    PATIENT_DEATH_TIME("DEATH_TIME"),
+    /**
      * Location as a String.
      */
     LOCATION("LOCATION"),

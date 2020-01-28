@@ -102,7 +102,7 @@ public class MrnEncounter extends TemporalCore implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("MrnEncounter [mrnEncounterId=%d, mrn=%d, encounter=%d]", mrnEncounterId, mrn.getMrnId(),
-                encounter.getEncounterId());
+        return String.format("MrnEncounter [mrnEncounterId=%d, mrn=%s, encounter=%s, validUntil=%s]", mrnEncounterId, mrn.getMrn(),
+                encounter.getEncounter(), getValidUntil());
     }
 }
